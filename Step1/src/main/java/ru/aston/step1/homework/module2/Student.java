@@ -24,7 +24,9 @@ public class Student {
     public String toString() {
         return "Student{" +
                 "firstName='" + firstName + '\'' +
-                ", lastname='" + lastname + '\'' + "}" ;
+                ", lastname='" + lastname + '\'' +
+                " count of books = " + books.size() +
+                "}" ;
     }
 
     public List<Book> getBooks() {
