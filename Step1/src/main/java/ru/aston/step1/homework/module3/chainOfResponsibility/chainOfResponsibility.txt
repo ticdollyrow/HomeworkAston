@@ -1,0 +1,16 @@
+Цепочка обязанностей — паттерн поведения объектов.
+
+Позволяет избежать привязки отправителя запроса к его получателю, предо-
+ставляя возможность обработать запрос нескольким объектам. Связывает
+объекты-получатели в цепочку и передает запрос по этой цепочке, пока он
+не будет обработан.
+
+A Real World Example
+Imagine you want to apply for a driver’s license. So you go to the first room in the corridor
+at the citizen center. There you ask whether you can apply for a driving license. The offi-
+cial in the first room does not process driving licenses, but hunting licenses, so he is not
+responsible; therefore he sends you to the second room. There, too, you ask and either get
+help or are sent one room over. At some point you will meet an officer who is responsible
+for driving licenses and he will help you.
+This already makes one feature of the pattern clear: you have a system of objects that
+could all potentially process the message.

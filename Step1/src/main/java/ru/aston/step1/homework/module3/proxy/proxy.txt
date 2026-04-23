@@ -1,0 +1,15 @@
+Заместитель — паттерн, структурирующий объекты.
+
+Является суррогатом другого объекта и контролирует доступ к нему.
+Proxy предоставляет интерфейс, идентичный реальному объекту, но добавляет дополнительную логику:
+ кэширование, ленивую загрузку, проверку прав доступа или логирование. Клиентский код работает с прокси так же,
+ как с оригиналом, не замечая подмены.
+
+
+
+1. Virtual Proxy: You need a placeholder for a certain duration to create a large object.
+2. Security Proxy: You want to block or at least control access to the object.
+As an example, consider the unmodifiableList() method of the Collections class in the Java class library.
+3. Smart Reference: You want to add functionality to the object; for example, you want to
+check whether the object is locked before actually accessing it.
+4. Remote Proxy: The desired object is not in the same address space.

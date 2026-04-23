@@ -1,0 +1,39 @@
+Поведенческий паттерн
+The Strategy Pattern is a behavioral pattern. You will always fall back on it when you can
+solve a task with different strategies; the term strategy in this context is a synonym for
+“algorithm” or for “behavior”. For example, you have a vacation photo and you want to
+save it in either jpg format or bmp format. You want to decide at runtime in which format
+to save the image. The Strategy Pattern solves the problem for you that you can implement
+one and the same task with different algorithms – to save a picture in different formats.
+You can easily add new algorithms – strategies.
+
+
+Определяет семейство алгоритмов, инкапсулирует каждый из них и делает их взаимозаменяемыми.
+Стратегия позволяет изменять алгоритмы независимо от клиентов, которые ими пользуются.
+
+Основные условия для применения паттерна стратегия:
+- наличие множества родственных классов, отличающихся только поведением.
+Стратегия позволяет настроить класс одним из многих возможных вариантов поведения;
+
+- наличие нескольких разновидностей алгоритма. Например, можно определить два варианта алгоритма,
+один из которых требует больше времени, а другой — больше памяти.
+
+- в алгоритме содержатся данные, о которых клиент не должен «знать».
+Используйте паттерн стратегия, чтобы не раскрывать сложные, специфичные
+для алгоритма структуры данных;
+
+- в классе определено много вариантов поведения, представленных разветвленными условными операторами.
+В этом случае проще перенести код из ветвей в отдельные классы стратегий.
+
+
+Участники
+- Strategy — стратегия:
+объявляет общий для всех поддерживаемых алгоритмов интерфейс.
+Класс Context пользуется этим интерфейсом для вызова конкретного
+алгоритма, определенного в классе ConcreteStrategy;
+- ConcreteStrategy — конкретная стратегия:
+реализует алгоритм, использующий интерфейс, объявленный в классе Strategy;
+- Context — контекст:
+• настраивается объектом класса ConcreteStrategy;
+• хранит ссылку на объект класса Strategy;
+• может определять интерфейс, который позволяет объекту Strategy обращаться к данным контекста.
