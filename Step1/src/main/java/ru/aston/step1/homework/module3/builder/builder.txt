@@ -1,0 +1,3 @@
+With the builder pattern, you have an object that is complex or
+complicated to construct. This object cannot be created in one pass, but goes through an
+elaborate construction process.

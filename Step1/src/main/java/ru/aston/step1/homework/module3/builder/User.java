@@ -2,10 +2,10 @@ package ru.aston.step1.homework.module3.builder;
 
 
 public class User {
-    private String name;
-    private String password;
-    private String phone;
-    private String email;
+    private final String name;
+    private final String password;
+    private final String phone;
+    private final String email;
 
     private User(UserBuilder builder){
         this.name = builder.name;
