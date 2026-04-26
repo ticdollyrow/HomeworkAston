@@ -1,8 +1,12 @@
 package ru.aston.step1.homework.module4.deadlock;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Deadlock {
     static class Friend {
         private final String name;
+        private final Lock lock = new ReentrantLock();
 
         public Friend(String name) {
             this.name = name;
@@ -12,17 +16,24 @@ public class Deadlock {
             return this.name;
         }
 
-        public synchronized void bow(Friend bower) {
+        public void bow(Friend bower) {
+            lock.lock();
+
             System.out.format("%s: %s"
                             + "  has bowed to me!%n",
                     this.name, bower.getName());
             bower.bowBack(this);
+            System.out.println("bower bowBack");
+            lock.unlock();
+            System.out.println("method bow");
         }
 
-        public synchronized void bowBack(Friend bower) {
+        public void bowBack(Friend bower) {
+            lock.lock();
             System.out.format("%s: %s"
                             + " has bowed back to me!%n",
                     this.name, bower.getName());
+            lock.unlock();
         }
     }
 
@@ -42,5 +53,7 @@ public class Deadlock {
                 gaston.bow(alphonse);
             }
         }).start();
+
+
     }
 }
