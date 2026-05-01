@@ -21,6 +21,7 @@ public class SortContext {
         System.out.println(Arrays.toString(numbers2));
         execute(new InsertionSortStrategy(), numbers3);
         System.out.println(Arrays.toString(numbers3));
+
     }
 
     public static void execute(SortStrategy strategy,  int[] numbers){
